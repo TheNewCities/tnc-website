@@ -73,6 +73,17 @@
     background:radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255,47,126,.14), transparent 65%);
     border-bottom:1px solid var(--panel-line);
   }
+  .lang-toggle{
+    position:absolute;top:24px;right:24px;z-index:2;
+    display:flex;align-items:center;gap:2px;border:1px solid var(--panel-line);border-radius:20px;padding:3px;
+  }
+  .lang-toggle button{
+    font-family:var(--eyebrow);font-weight:700;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
+    background:none;border:0;color:var(--muted);padding:6px 13px;border-radius:16px;cursor:pointer;transition:all .2s ease;
+  }
+  .lang-toggle button.active{background:var(--pink);color:#0a0810;}
+  .lang-toggle button:hover:not(.active){color:var(--ink);}
+  @media(max-width:500px){.lang-toggle{position:static;margin:0 auto 24px;width:fit-content;}}
   .kit-header__tag{
     font-family:var(--eyebrow);font-weight:700;text-transform:uppercase;letter-spacing:.32em;font-size:.78rem;
     color:var(--cyan);margin-bottom:30px;
@@ -145,40 +156,88 @@
 
 <!-- ============ HEADER ============ -->
 <header class="kit-header">
-  <div class="kit-header__tag">Electronic Press Kit</div>
+  <div class="lang-toggle" id="langToggle">
+    <button type="button" data-setlang="en">EN</button>
+    <button type="button" data-setlang="fr">FR</button>
+  </div>
+  <div class="kit-header__tag"
+       data-en="Electronic Press Kit"
+       data-fr="Dossier de presse électronique">
+        Electronic Press Kit
+  </div>
   <div class="kit-header__logo"><img src="assets/logo27.jpg" alt="The New Cities"></div>
   <div class="kit-header__loc">Trois-Rivières, Canada</div>
-  <p class="kit-header__sub">Canadian synth rock — neon hooks, punk-rock nerve, gold-certified, JUNO &amp; ADISQ nominated.</p>
+  <p class="kit-header__sub"
+     data-en="Canadian synth rock — gold-certified, JUNO &amp; ADISQ nominated."
+     data-fr="Synth rock canadien — certifié or, nommé aux JUNO et à l’ADISQ.">
+      Canadian synth rock — gold-certified, JUNO &amp; ADISQ nominated.
+  </p>
   <div class="kit-header__cta">
-    <a href="https://www.thenewcitiesofficial.com" target="_blank" rel="noopener" class="btn btn--primary">Visit Official Site ↗</a>
-    <a href="#contact" class="btn btn--outline">Booking &amp; Contact</a>
+    <a href="https://www.thenewcitiesofficial.com" target="_blank" rel="noopener" class="btn btn--primary"
+       data-en="Visit Official Site ↗"
+       data-fr="Visiter le site officiel ↗">
+        Visit Official Site ↗
+    </a>
+    <a href="#contact" class="btn btn--outline"
+       data-en="Booking &amp; Contact"
+       data-fr="Booking et contact">
+        Booking &amp; Contact
+    </a>
   </div>
 </header>
 
 <!-- ============ ABOUT ============ -->
 <section class="section-pad" id="about">
   <div class="wrap">
-    <div class="eyebrow reveal">About</div>
+    <div class="eyebrow reveal"
+         data-en="About"
+         data-fr="À propos">
+          About
+    </div>
     <div class="about__text reveal">
-      <p>Originally from Trois-Rivières, the band established itself as a major player in the 2010s Canadian music scene. Their unique style blends synth-pop with dance and punk energy. This signature sound earned them appearances in cult television series such as "Gossip Girl" and "Degrassi".</p>
-      <p>Renowned for their explosive live performances, they shared the stage with international stars such as Katy Perry, Simple Plan and Metric. In 2011, following the release of their second album, <em>Kill the Lights</em>, they opened for Avril Lavigne's Canadian tour (Black Star Tour), cementing their presence after two years of intensive touring in Canada, France, and the United Kingdom.</p>
+      <p data-en="Originally from Trois-Rivières, the band established itself as a major player in the 2010s Canadian music scene. Their unique style blends synth-pop with dance and punk energy. This signature sound earned them appearances in cult television series such as &quot;Gossip Girl&quot; and &quot;Degrassi&quot;."
+         data-fr="Originaire de Trois-Rivières, le groupe s’est imposé comme un acteur majeur de la scène musicale canadienne des années 2010. Leur style unique marie le synth-pop à une énergie dance et punk. Cette signature sonore leur a valu des apparitions dans des séries télévisées cultes telles que «Gossip Girl» et «Degrassi».">
+          Originally from Trois-Rivières, the band established itself as a major player in the 2010s Canadian music scene. Their unique style blends synth-pop with dance and punk energy. This signature sound earned them appearances in cult television series such as "Gossip Girl" and "Degrassi".
+      </p>
+      <p data-en="Renowned for their explosive live performances, they shared the stage with international stars such as Katy Perry, Simple Plan and Metric. In 2011, following the release of their second album, <em>Kill the Lights</em>, they opened for Avril Lavigne's Canadian tour (Black Star Tour), cementing their presence after two years of intensive touring in Canada, France, and the United Kingdom."
+         data-fr="Reconnu pour ses performances explosives sur scène, le groupe a partagé la scène avec des vedettes internationales telles que Katy Perry, Simple Plan et Metric. En 2011, à la suite de la sortie de leur deuxième album, <em>Kill the Lights</em>, ils ont assuré la première partie de la tournée canadienne d’Avril Lavigne (Black Star Tour), confirmant leur présence après deux années de tournées intensives au Canada, en France et au Royaume-Uni.">
+          Renowned for their explosive live performances, they shared the stage with international stars such as Katy Perry, Simple Plan and Metric. In 2011, following the release of their second album, <em>Kill the Lights</em>, they opened for Avril Lavigne's Canadian tour (Black Star Tour), cementing their presence after two years of intensive touring in Canada, France, and the United Kingdom.
+      </p>
     </div>
 
     <div class="feature-row">
       <div class="feature-card reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9.2"/><circle cx="12" cy="12" r="3"/></svg>
-        <h3>Gold Record</h3>
-        <p>Gold certification for <em>Dead End Countdown</em>.</p>
+        <h3 data-en="Gold Record"
+            data-fr="Disque d’or">
+             Gold Record
+        </h3>
+        <p data-en="Gold certification for <em>Dead End Countdown</em>."
+           data-fr="Certification or pour <em>Dead End Countdown</em>.">
+            Gold certification for <em>Dead End Countdown</em>.
+        </p>
       </div>
       <div class="feature-card reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.5l2.9 6 6.6.7-5 4.5 1.4 6.5-5.9-3.5-5.9 3.5 1.4-6.5-5-4.5 6.6-.7z"/></svg>
-        <h3>Awards</h3>
-        <p>A SOCAN songwriting award, plus nominations from the JUNOs, ADISQ, and MuchMusic Video Awards.</p>
+        <h3 data-en="Awards"
+            data-fr="Prix">
+             Awards
+        </h3>
+        <p data-en="A SOCAN songwriting award, plus nominations from the JUNOs, ADISQ, and MuchMusic Video Awards."
+           data-fr="Un prix d’écriture SOCAN, ainsi que des nominations aux JUNO, à l’ADISQ et aux MuchMusic Video Awards.">
+            A SOCAN songwriting award, plus nominations from the JUNOs, ADISQ, and MuchMusic Video Awards.
+        </p>
       </div>
       <div class="feature-card reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>
-        <h3>Collaborations</h3>
-        <p>The single <em>Heatwave</em> was co-written with the collective The Matrix and features a melody from Baltimora's famous track <em>Tarzan Boy</em>.</p>
+        <h3 data-en="Collaborations"
+            data-fr="Collaborations">
+             Collaborations
+        </h3>
+        <p data-en="The single <em>Heatwave</em> was co-written with the collective The Matrix and features a melody from Baltimora's famous track <em>Tarzan Boy</em>."
+           data-fr="Le single <em>Heatwave</em>, coécrit avec le collectif The Matrix, reprend une mélodie du célèbre titre <em>Tarzan Boy</em> de Baltimora.">
+            The single <em>Heatwave</em> was co-written with the collective The Matrix and features a melody from Baltimora's famous track <em>Tarzan Boy</em>.
+        </p>
       </div>
     </div>
   </div>
@@ -187,7 +246,11 @@
 <!-- ============ SOCIAL ============ -->
 <section class="section-pad">
   <div class="wrap">
-    <div class="eyebrow reveal">Connect</div>
+    <div class="eyebrow reveal"
+         data-en="Connect"
+         data-fr="Suivez-nous">
+          Connect
+    </div>
     <div class="social-grid reveal">
       <a class="social-card" href="https://open.spotify.com/artist/4ukbmsqidRruP2Is95kkTA" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M7 10c3.2-1 7-.6 10 1M7.5 13c2.6-.7 5.6-.4 8 .9M8 16c2-.5 4.4-.3 6.2.7"/></svg>
@@ -224,14 +287,24 @@
 <!-- ============ CONTACT ============ -->
 <section class="section-pad" id="contact" style="border-bottom:none;">
   <div class="wrap">
-    <div class="eyebrow reveal">Contact</div>
+    <div class="eyebrow reveal"
+         data-en="Contact"
+         data-fr="Contact">
+          Contact
+    </div>
     <div class="contact__grid reveal">
       <div class="contact-card">
-        <h3>General / Press inquiries</h3>
+        <h3 data-en="General / Press inquiries"
+            data-fr="Général / Demandes de presse">
+             General / Press inquiries
+        </h3>
         <a class="mail" href="mailto:thenewcitiesofficial@gmail.com">thenewcitiesofficial@gmail.com</a>
       </div>
       <div class="contact-card">
-        <h3>Booking</h3>
+        <h3 data-en="Booking"
+            data-fr="Booking">
+             Booking
+        </h3>
         <div class="booking-name">Guy Ritchot</div>
         <div class="booking-line"><a href="mailto:chef@lourslabel.com">chef@lourslabel.com</a></div>
         <div class="booking-line"><a href="tel:+15149621351">(514) 962-1351</a></div>
@@ -244,7 +317,11 @@
 <footer>
   <div class="wrap">
     <div class="wordmark">THE NEW CITIES</div>
-    <a href="https://www.thenewcitiesofficial.com" target="_blank" rel="noopener" class="official-link">Visit the official site ↗</a>
+    <a href="https://www.thenewcitiesofficial.com" target="_blank" rel="noopener" class="official-link"
+       data-en="Visit the official site ↗"
+       data-fr="Visiter le site officiel ↗">
+        Visit the official site ↗
+    </a>
     <div class="foot-social">
       <a href="https://open.spotify.com/artist/4ukbmsqidRruP2Is95kkTA" aria-label="Spotify" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><path d="M7 10c3.2-1 7-.6 10 1M7.5 13c2.6-.7 5.6-.4 8 .9M8 16c2-.5 4.4-.3 6.2.7"/></svg></a>
       <a href="https://www.youtube.com/thenewcities" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg></a>
@@ -253,11 +330,41 @@
       <a href="https://x.com/thenewcities" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
       <a href="https://www.tiktok.com/@thenewcitiesofficial" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 4v10.8a3.6 3.6 0 1 1-3-3.55"/><path d="M14 4.2c.5 2.5 2.5 4.4 5 4.6V11.4c-1.9-.1-3.7-.8-5-2"/></svg></a>
     </div>
-    <div class="copyright">© 2026 The New Cities. All rights reserved.</div>
+    <div class="copyright"
+         data-en="© 2026 The New Cities. All rights reserved."
+         data-fr="© 2026 The New Cities. Tous droits réservés.">
+          © 2026 The New Cities. All rights reserved.
+    </div>
   </div>
 </footer>
 
 <script>
+  // ---------- bilingual EN/FR toggle ----------
+  function tncSetLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var val = el.getAttribute('data-' + lang);
+      if(val !== null) el.innerHTML = val;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-setlang') === lang);
+    });
+    try{ localStorage.setItem('tnc-lang', lang); }catch(e){}
+    var url = new URL(window.location.href);
+    if(lang === 'fr'){ url.searchParams.set('lang','fr'); } else { url.searchParams.delete('lang'); }
+    history.replaceState({}, '', url);
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function(b){
+    b.addEventListener('click', function(){ tncSetLang(b.getAttribute('data-setlang')); });
+  });
+  (function tncInitLang(){
+    var params = new URLSearchParams(window.location.search);
+    var saved = null;
+    try{ saved = localStorage.getItem('tnc-lang'); }catch(e){}
+    var lang = params.get('lang') || saved || 'en';
+    tncSetLang(lang);
+  })();
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.15});
